@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IpawDesign - Jasa Desain UI/UX Profesional</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --sky-blue: #87CEEB; /* Biru Langit */
+            --soft-blue: #BDE0FE;
+            --pastel-pink: #FFC8DD;
+            --pastel-bg: #F8F9FA; /* Warna latar sedikit abu-abu pastel */
+            --dark-text: #343a40;
+            --primary-blue: #0d6efd;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+        }
+
+        /* --- Custom Styles --- */
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--soft-blue), var(--sky-blue));
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--sky-blue);
+            border-radius: 2px;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .bg-pastel {
+            background-color: var(--pastel-bg);
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+        }
+
+        .portfolio-card {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-card img, .portfolio-card .img-placeholder {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .portfolio-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .img-placeholder {
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .pricing-card {
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+             box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.recommended {
+            border-color: var(--primary-blue);
+            border-width: 2px;
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0b5ed7;
+        }
+        
+        .footer {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 50px 0;
+        }
+
+        .footer a {
+            color: var(--soft-blue);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top py-3">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+  <span style="color:#0F172A;">Ipaw</span><span style="color:#1D4ED8;">Design</span>
+</a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center gap-lg-3 fw-medium">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#hero">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#layanan">Layanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#portofolio">Portofolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#proses">Proses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#harga">Harga</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary text-white px-4 py-2 ms-lg-2" href="#kontak" style="border-radius: 10px;">Hubungi Kami</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section id="hero" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mx-auto text-center">
+                <h1 class="display-4 fw-bold">Mengubah Visi Anda Menjadi Desain Digital Berkualitas Tinggi</h1>
+                <p class="lead my-4">Kami adalah mitra strategis dalam merancang antarmuka (UI) yang estetis dan pengalaman pengguna (UX) yang fungsional, untuk menghadirkan solusi digital yang tidak hanya menarik secara visual tetapi juga efektif secara performa.</p>
+                <a href="#portofolio" class="btn btn-outline-light btn-lg mt-3">Jelajahi Portofolio Kami</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="layanan" class="section-padding">
+        <div class="container">
+            <h2 class="text-center section-title">Layanan Kami</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card text-center p-4">
+                        <div class="card-body">
+                            <div class="icon mb-3"><i class="bi bi-palette-fill"></i></div>
+                            <h5 class="card-title fw-bold">Desain Antarmuka (UI)</h5>
+                            <p class="card-text">Kami merancang antarmuka yang bersih, modern, dan menarik secara visual, sesuai dengan identitas brand Anda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card text-center p-4">
+                        <div class="card-body">
+                            <div class="icon mb-3"><i class="bi bi-people-fill"></i></div>
+                            <h5 class="card-title fw-bold">Riset Pengguna (UX)</h5>
+                            <p class="card-text">Kami melakukan riset mendalam untuk memahami kebutuhan dan perilaku pengguna demi menciptakan produk yang mudah digunakan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card text-center p-4">
+                        <div class="card-body">
+                            <div class="icon mb-3"><i class="bi bi-phone-flip"></i></div>
+                            <h5 class="card-title fw-bold">Prototyping Interaktif</h5>
+                            <p class="card-text">Kami membuat prototipe interaktif yang memungkinkan Anda merasakan produk sebelum masuk ke tahap pengembangan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portofolio" class="section-padding bg-pastel">
+        <div class="container">
+            <h2 class="text-center section-title">Karya Terbaik Kami</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card portfolio-card">
+                         <div class="img-placeholder d-flex align-items-center justify-content-center">
+<img src="3.jpg" alt="">
+
+
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Aplikasi Finansial</h5>
+                            <p class="card-text">Desain untuk aplikasi mobile pengelola keuangan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card portfolio-card">
+                        <div class="img-placeholder d-flex align-items-center justify-content-center">
+<img src="1.jpg" alt="">
+
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Website E-commerce</h5>
+                            <p class="card-text">Redesain website untuk toko online fashion.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card portfolio-card">
+                        <div class="img-placeholder d-flex align-items-center justify-content-center">
+<img src="2.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dashboard Analitik</h5>
+                            <p class="card-text">Desain dashboard untuk platform SaaS.</p>
+                        </div>
+                    </div>
+                </div>
+                 </div>
+        </div>
+    </section>
+    
+<section id="testimoni" class="section-padding bg-white">
+    <div class="container">
+        <h2 class="text-center section-title">Apa Kata Klien Kami</h2>
+        <div class="row g-4 mt-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-4 border-0 shadow rounded-4 h-100">
+                    <p class="fst-italic">"IpawDesign benar-benar mengerti visi kami dan mengubahnya menjadi UI yang cantik dan fungsional."</p>
+                    <div class="mt-3 d-flex align-items-center">
+                        <img src="p1.jpg" alt="Client 1" class="rounded-circle me-3" width="50" height="50">
+                        <div>
+                            <strong>Rina M.</strong><br><small>CEO, Fintechku</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-4 border-0 shadow rounded-4 h-100">
+                    <p class="fst-italic">"Komunikasi sangat lancar dan hasil desain sangat profesional. Prototipe interaktif sangat membantu tim kami."</p>
+                    <div class="mt-3 d-flex align-items-center">
+                        <img src="p2.jpg" alt="Client 2" class="rounded-circle me-3" width="50" height="50">
+                        <div>
+                            <strong>Aldi N.</strong><br><small>Product Owner, StartupX</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-4 border-0 shadow rounded-4 h-100">
+                    <p class="fst-italic">"Kami sangat puas! Proyek selesai tepat waktu dan tampilan aplikasinya memukau investor kami."</p>
+                    <div class="mt-3 d-flex align-items-center">
+                        <img src="p3.jpg" alt="Client 3" class="rounded-circle me-3" width="50" height="50">
+                        <div>
+                            <strong>Indah P.</strong><br><small>CTO, EduTech.id</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="proses" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-title">Bagaimana Proses Kerja Kami?</h2>
+            <div class="row g-4 mt-5">
+                <div class="col-md-3">
+                    <div class="p-3">
+                        <h3 class="fw-bold" style="color:var(--sky-blue)">01.</h3>
+                        <h5 class="fw-bold mt-2">Diskusi & Riset</h5>
+                        <p>Kami memulai dengan memahami visi, tujuan, dan target pengguna Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3">
+                        <h3 class="fw-bold" style="color:var(--sky-blue)">02.</h3>
+                        <h5 class="fw-bold mt-2">Konsep & Desain</h5>
+                        <p>Membuat wireframe, moodboard, dan merancang visual antarmuka (UI).</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3">
+                        <h3 class="fw-bold" style="color:var(--sky-blue)">03.</h3>
+                        <h5 class="fw-bold mt-2">Prototipe & Uji Coba</h5>
+                        <p>Membangun prototipe interaktif dan mengujinya kepada pengguna.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3">
+                        <h3 class="fw-bold" style="color:var(--sky-blue)">04.</h3>
+                        <h5 class="fw-bold mt-2">Serah Terima</h5>
+                        <p>Menyerahkan aset desain final yang siap untuk dikembangkan oleh tim developer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="harga" class="section-padding bg-pastel">
+        <div class="container">
+            <h2 class="text-center section-title">Paket Harga Fleksibel</h2>
+            <div class="row g-4 mt-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card text-center p-4 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">STARTER</h5>
+                            <p>Untuk proyek kecil atau landing page.</p>
+                            <h1 class="card-title my-3 fw-bold">Rp 3 Juta</h1>
+                            <ul class="list-unstyled my-4">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Hingga 5 Halaman Desain</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> 1 Konsep Desain</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> 2x Revisi</li>
+                                <li class="text-muted"><i class="bi bi-x-circle-fill"></i> Riset UX Mendalam</li>
+                            </ul>
+                            <a href="#kontak" class="btn btn-outline-primary mt-auto">Pilih Paket</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card recommended text-center p-4 h-100">
+                        <div class="card-body d-flex flex-column">
+                             <span class="badge bg-primary align-self-center mb-3">Paling Populer</span>
+                            <h5 class="card-title fw-bold">PROFESIONAL</h5>
+                            <p>Untuk aplikasi mobile atau website kompleks.</p>
+                            <h1 class="card-title my-3 fw-bold">Rp 8 Juta</h1>
+                            <ul class="list-unstyled my-4">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Hingga 15 Halaman Desain</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Riset UX Mendalam</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Prototipe Interaktif</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> 3x Revisi</li>
+                            </ul>
+                            <a href="#kontak" class="btn btn-primary mt-auto">Pilih Paket</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card text-center p-4 h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">ENTERPRISE</h5>
+                            <p>Untuk proyek skala besar dan berkelanjutan.</p>
+                            <h1 class="card-title my-3 fw-bold">Hubungi Kami</h1>
+                             <ul class="list-unstyled my-4">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Jumlah Halaman Kustom</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Design System</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Dukungan Penuh</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Revisi Tanpa Batas</li>
+                            </ul>
+                            <a href="#kontak" class="btn btn-outline-primary mt-auto">Diskusi Proyek</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h2 class="section-title">Siap Memulai Proyek Anda?</h2>
+                    <p class="lead">Kirimkan pesan kepada kami untuk mendapatkan konsultasi gratis mengenai kebutuhan desain produk digital Anda. Kami akan segera menghubungi Anda!</p>
+                    <form class="mt-5">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-lg" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-lg" placeholder="Email Anda" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control form-control-lg" rows="5" placeholder="Jelaskan proyek Anda..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg" style="border-radius:10px">Kirim Pesan</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">IpawDesign</h5>
+                    <p>Solusi desain UI/UX untuk membantu produk Anda tumbuh dan dicintai oleh pengguna.</p>
+                </div>
+                <div class="col-md-2 offset-md-1 mb-3">
+                    <h5 class="fw-bold">Tautan</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#layanan">Layanan</a></li>
+                        <li><a href="#portofolio">Portofolio</a></li>
+                        <li><a href="#harga">Harga</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 offset-md-1 mb-3">
+                    <h5 class="fw-bold">Kontak</h5>
+                    <p>
+                        <i class="bi bi-envelope-fill"></i> IpawDesign@gmail.com<br>
+                        <i class="bi bi-telephone-fill"></i> +62 8987 2407 19<br>
+                        <i class="bi bi-geo-alt-fill"></i> Cicurug, Indonesia
+                    </p>
+                    <div>
+                        <a href="#" class="fs-4 me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-4 me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="fs-4"><i class="bi bi-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2025 IpawDesign. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
